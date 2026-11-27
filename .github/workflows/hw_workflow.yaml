@@ -12,12 +12,3 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello DevOps Class!"
-
-      - name: Notificar aluno via GitHub
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh issue create \
-            --repo ${{ github.repository }} \
-            --title "Novo push de ${{ github.actor }}" \
-            --body "Olá @${{ github.actor }}, fizeste um novo push para '${{ github.ref_name }}' e este é o GitHub Actions em ação! 🚀"
